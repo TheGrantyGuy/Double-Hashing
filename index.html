@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Doubling Hashing Technique</title>
+  <h1>Double Hashing Technique</h1>
+  <link href="DoubleHash.css" rel="stylesheet">
+  <script src="DoubleHash.js"></script>
+</head>
+<body onload="setArrayBackground();">
+
+  <!--Section to demonstrate the algorithm on an array-->
+  <div class = firstSection>
+    <h2>Hash Table</h2>
+    <h3>Hash Functions: </h3>
+    <span><b>First</b>: Input-Value mod 16 <b>& Second</b>: 2 * (Input-Value mod 4) + 1</span>
+    <br></br>
+  <div class="array" id="array">
+    <div class="slot" id="a0">
+      <span class="slot0" id="s0"></span>
+      <div class="text" id=0>0</div>
+    </div>
+    <div class="slot" id="a1">
+      <span class="slot1" id="s1"></span>
+      <div class="text" id=1>1</div>
+    </div>
+    <div class="slot" id="a2">
+      <span class="slot2" id="s2"></span>
+      <div class="text" id=2>2</div>
+    </div>
+    <div class="slot" id="a3">
+      <span class="slot3" id="s3"></span>
+      <div class="text" id=3>3</div>
+    </div>
+    <div class="slot" id="a4">
+      <span class="slot4" id="s4"></span>
+      <div class="text" id=4>4</div>
+    </div>
+    <div class="slot" id="a5">
+      <span class="slot5" id="s5"></span>
+      <div class="text" id=5>5</div>
+    </div>
+    <div class="slot" id="a6">
+      <span class="slot6" id="s6"></span>
+      <div class="text" id=6>6</div>
+    </div>
+    <div class="slot" id="a7">
+      <span class="slot7" id="s7"></span>
+      <div class="text" id=7>7</div>
+    </div>
+    <div class="slot" id="a8">
+      <span class="slot8" id="s8"></span>
+      <div class="text" id=8>8</div>
+    </div>
+    <div class="slot" id="a9">
+      <span class="slot9" id="s9"></span>
+      <div class="text" id=9>9</div>
+    </div>
+    <div class="slot" id="a10">
+      <span class="slot10" id="s10"></span>
+      <div class="text" id=10>10</div>
+    </div>
+    <div class="slot" id="a11">
+      <span class="slot11" id="s11"></span>
+      <div class="text" id=11>11</div>
+    </div>
+    <div class="slot" id="a12">
+      <span class="slot12" id="s12"></span>
+      <div class="text" id=12>12</div>
+    </div>
+    <div class="slot" id="a13">
+      <span class="slot13" id="s13"></span>
+      <div class="text" id=13>13</div>
+    </div>
+    <div class="slot" id="a14">
+      <span class="slot14" id="s14"></span>
+      <div class="text" id=14>14</div>
+    </div>
+    <div class="slot" id="a15">
+      <span class="slot15" id="s15"></span>
+      <div class="text" id=15>15</div>
+    </div> 
+    </div>
+    
+  </div>
+  
+</div>
+
+
+
+  <div style="clear: left;"></div>
+  
+
+
+  <h2>Input</h2>
+  <table>
+    <tr>
+      <th style="background: rgb(255, 233, 204); width: 10em;">Value
+      <td><input autocomplete="off" type="number" id="inputValue">
+      </tr>
+    <tr>
+    <th style="border: solid red 2px; background: #eef;"
+    onclick="hashing()">&nbsp;Enter&nbsp;</th>
+    <th style="border: solid red 2px; background: #fee;"
+    onclick="reset()">&nbsp;Clear&nbsp;</th>
+    </table>
+
+    <div id="exp">
+      <h2>Explanation</h2>
+      <p>This animation demonstrates the use of double hashing,
+         a technique used to resolve collisions in open-addressed hash tables. 
+        The above two hash functions are used. Both hash functions are used each 
+        time a value is inputted into the table, in order to find where to insert those values into the table. 
+        The slot in which they are hashed into follow the double hashing function,
+        which is (The first hash function + i * the second hash function) mod 16. The variable i is intially
+        set to 0, but every time an inputted value encounters a collision, which is when there is already
+        a value in the hashed addressed, i keeps incrementing and the double hashing function is recomputed until the inputted value
+        finds an empty slot in the table. When inserting a value into the table, a successful insertion is denoted by a green cell.
+        If there is a collision, the slot where that value should have hashed to will be denoted by one or more red gradient cells, and its successful 
+        placement into the table will be denoted by the green cell. The darkest shade of red is the original slot where the value should have hashed to,
+        and each lighter shade of red is the next slot it should have hashed to and so on. 
+    </p>
+    </div>
+    
+</body>
+</html>
